@@ -1,0 +1,686 @@
+/* Start Prepare Tools */
+/* 200 */
+@font-face {
+  font-family: "WorkSans-Light";
+  src: url(../Font_Family/Work_Sans/static/WorkSans-Light.ttf);
+}
+/* 400 */
+@font-face {
+  font-family: "WorkSans-Regular";
+  src: url(../Font_Family/Work_Sans/static/WorkSans-Regular.ttf);
+}
+/* 700 */
+@font-face {
+  font-family: "WorkSans-Bold";
+  src: url(../Font_Family/Work_Sans/static/WorkSans-Bold.ttf);
+}
+
+html {
+  font-size: 20px;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Gray: #777;
+  --HGray: #f6f6f6;
+  --DGray: #d7d7d7;
+  --HSectionColor: #ebeced;
+  --PSectionColor: #797979;
+  --White: white;
+  --Teruoise: #10cab7;
+  --DTeruoise: #00b5a3;
+  --HTeruoise: rgba(16, 202, 183, 0.512);
+  --Black: #333333;
+  --FourBlack: #444;
+  --Navy_Blue: #2c4755;
+  --Trans: transparent;
+}
+
+::selection {
+  background-color: var(--Teruoise);
+  color: var(--White);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--Teruoise);
+  border: 2px solid var(--DTeruoise);
+}
+
+/* Let's Start */
+.Home {
+  width: 100%;
+  height: 100vb;
+  background-color: var(--White);
+}
+
+.Home .NavBar {
+  width: 80%;
+  height: 64px;
+  background-color: var(--White);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.Home .NavBar .Picture img {
+  width: 20%;
+}
+
+.Home .NavBar .Icon {
+  font-size: 1.5rem;
+}
+
+.Home .NavBar .Icon:hover {
+  cursor: pointer;
+}
+
+.Home .NavBar .Icon:hover + .List {
+  display: block;
+}
+
+.Home .NavBar .List:hover {
+  display: block;
+}
+
+.Home .NavBar .List {
+  position: absolute;
+  top: 64px;
+  right: 0;
+  display: none;
+}
+
+.Home .NavBar .List ul {
+  list-style: none;
+  width: 200px;
+  background-color: var(--HGray);
+}
+
+.Home .NavBar .List ul li {
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--DGray);
+  font-size: 0.8rem;
+  font-family: "WorkSans-Regular";
+  transition: all 0.5s ease-in-out;
+}
+
+.Home .NavBar .List ul li a {
+  text-decoration: none;
+  color: var(--Black);
+}
+
+.Home .NavBar .List ul li:hover {
+  margin-left: 10px;
+}
+
+.Home .NavBar .List::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 5px;
+  border-left: 10px solid var(--Trans);
+  border-right: 10px solid var(--Trans);
+  border-top: 10px solid var(--Trans);
+  border-bottom: 10px solid var(--HGray);
+}
+
+.Home .Landing {
+  width: 100%;
+  height: calc(100vb - 64px);
+  background-image: url(../image/memo2.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.Home .Landing h1 {
+  color: var(--Teruoise);
+  font-size: 2.5rem;
+  font-family: "WorkSans-Bold";
+  padding: 20px;
+}
+
+.Home .Landing p {
+  font-size: 0.95rem;
+  font-family: "WorkSans-Regular";
+  word-spacing: 3.1px;
+  line-height: 1.8;
+}
+
+/* Let's Start Feature Section */
+
+.Feature {
+  width: 100%;
+  padding: 45px 0;
+  background-color: var(--HGray);
+}
+
+.Feature .Container {
+  width: 75%;
+  margin: auto;
+  padding: 10px;
+  background-color: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Feature .Container .Card {
+  padding: 20px 0;
+  text-align: center;
+  width: calc(95% / 3);
+}
+
+.Feature .Container .Card i {
+  padding: 15px;
+  font-size: 2.5rem;
+  color: var(--Teruoise);
+}
+
+.Feature .Container .Card h2 {
+  padding: 20px;
+  font-size: 0.95rem;
+  font-family: "WorkSans-Bold";
+}
+
+.Feature .Container .Card p {
+  color: var(--Gray);
+  font-size: 0.85rem;
+  padding: 15px;
+  line-height: 1.6;
+  letter-spacing: 1.01px;
+  font-family: "WorkSans-Regular";
+}
+
+@media (max-width: 767px) {
+  .Feature .Container .Card {
+    width: calc(95% / 1);
+  }
+}
+@media (min-width: 768px) {
+  .Feature .Container .Card {
+    width: calc(95% / 2);
+  }
+}
+@media (min-width: 1200px) {
+  .Feature .Container .Card {
+    width: calc(95% / 3);
+  }
+}
+
+/* Let's Start Services Section */
+
+.Services,
+.Portfolio,
+.About,
+.Contact {
+  width: 100%;
+  padding: 70px 0;
+  background-color: var(--White);
+}
+
+.Services .Container,
+.Portfolio .Container,
+.About .Container,
+.Contact .Container {
+  width: 75%;
+  margin: auto;
+}
+
+.Services .Container h2,
+.Portfolio .Container h2,
+.About .Container h2,
+.Contact .Container h2 {
+  font-size: 5rem;
+  text-align: center;
+  color: var(--HSectionColor);
+  font-family: "WorkSans-Bold";
+}
+
+.Services .Container p,
+.Portfolio .Container p,
+.About .Container p,
+.Contact .Container p {
+  font-size: 1rem;
+  text-align: center;
+  color: var(--PSectionColor);
+  font-family: "WorkSans-Regular";
+  margin-top: -30px;
+}
+
+.Services .Container .Parent,
+.Portfolio .Container .Parent,
+.About .Container .Parent {
+  width: 100%;
+  padding: 60px 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Services .Container .Parent .Skills {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Services .Container .Parent .Picture {
+  width: 30%;
+  position: relative;
+}
+
+.Services .Container .Parent .Picture::after {
+  content: "";
+  width: 100px;
+  height: 450px;
+  background-color: var(--Navy_Blue);
+  position: absolute;
+  top: -50px;
+  right: -5px;
+  z-index: 1;
+}
+
+.Services .Container .Parent .Picture img {
+  width: 75%;
+  margin-left: 12.5%;
+  position: relative;
+  z-index: 2;
+}
+
+.Services .Container .Parent .Skills .Skill {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.Services .Container .Parent .Skills .Skill i {
+  width: 15%;
+  font-size: 1.6rem;
+  text-align: center;
+  color: var(--Teruoise);
+}
+
+.Services .Container .Parent .Skills .Skill .Details {
+  width: 85%;
+}
+
+.Services .Container .Parent .Skills .Skill .Details h3,
+.Portfolio .Container .Parent .Card .Details h3 {
+  color: var(--Black);
+  font-size: 0.95rem;
+  font-family: "WorkSans-Bold";
+}
+
+.Services .Container .Parent .Skills .Skill .Details p,
+.Portfolio .Container .Parent .Card .Details p {
+  color: var(--FourBlack);
+  font-family: "WorkSans-Light";
+  font-size: 0.8rem;
+  margin-top: 15px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .Services .Container,
+  .Portfolio .Container,
+  .About .Container,
+  .Contact .Container {
+    width: 100%;
+  }
+  .Services .Container h2,
+  .Portfolio .Container h2,
+  .About .Container h2,
+  .Contact .Container h2 {
+    font-size: 3rem;
+  }
+  .Services .Container p,
+  .Portfolio .Container p,
+  .About .Container p,
+  .Contact .Container p {
+    font-size: 0.8rem;
+    margin-top: -20px;
+  }
+
+  .Services .Container .Parent .Skills .Skill {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+  .Services .Container .Parent .Skills {
+    width: 100%;
+  }
+  .Services .Container .Parent .Picture {
+    display: none;
+  }
+
+  .Services .Container .Parent .Skills .Skill i {
+    padding: 20px;
+  }
+  .Services .Container .Parent .Skills .Skill .Details p {
+    text-align: center;
+  }
+
+  .Portfolio .Container .Parent .Card {
+    width: calc(95% / 1);
+  }
+}
+
+@media (min-width: 768px) {
+  .Services .Container,
+  .Portfolio .Container,
+  .About .Container,
+  .Contact .Container {
+    width: 85%;
+  }
+  .Services .Container h2,
+  .Portfolio .Container h2,
+  .About .Container h2,
+  .Contact .Container h2 {
+    font-size: 4rem;
+  }
+  .Services .Container p,
+  .Portfolio .Container p,
+  .About .Container p,
+  .Contact .Container p {
+    font-size: 0.9rem;
+    margin-top: -25px;
+  }
+
+  .Services .Container .Parent .Skills .Skill {
+    width: 50%;
+  }
+  .Services .Container .Parent .Skills {
+    width: 100%;
+  }
+  .Services .Container .Parent .Picture {
+    display: none;
+  }
+
+  .Portfolio .Container .Parent .Card {
+    width: calc(95% / 2);
+  }
+}
+
+@media (min-width: 1200px) {
+  .Services .Container,
+  .Portfolio .Container,
+  .About .Container,
+  .Contact .Container {
+    width: 75%;
+  }
+  .Services .Container h2,
+  .Portfolio .Container h2,
+  .About .Container h2,
+  .Contact .Container h2 {
+    font-size: 5rem;
+  }
+  .Services .Container p,
+  .Portfolio .Container p,
+  .About .Container p,
+  .Contact .Container p {
+    font-size: 1rem;
+    margin-top: -30px;
+  }
+
+  .Services .Container .Parent .Skills .Skill {
+    width: 50%;
+  }
+  .Services .Container .Parent .Skills {
+    width: 70%;
+  }
+  .Services .Container .Parent .Picture {
+    display: block;
+    width: 30%;
+  }
+
+  .Portfolio .Container .Parent .Card {
+    width: calc(95% / 3);
+  }
+}
+
+/* Let's Start Portfolio Section */
+
+.Portfolio,
+.Contact {
+  background-color: var(--HGray);
+}
+
+.Portfolio .Container .Parent {
+  padding-bottom: 0;
+  justify-content: space-between;
+}
+
+.Portfolio .Container .Parent .Card {
+  width: calc(95% / 3);
+  background-color: var(--White);
+  overflow: hidden;
+}
+
+.Portfolio .Container .Parent .Card img {
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.Portfolio .Container .Parent .Card img:hover {
+  transform: scale(1.02);
+}
+
+.Portfolio .Container .Parent .Card .Details {
+  padding: 15px;
+}
+
+.Portfolio .Container .Parent .Card .Details p {
+  color: var(--Gray);
+  line-height: 1.7;
+}
+
+@media (max-width: 767px) {
+  .Portfolio .Container .Parent .Card {
+    width: calc(95% / 1);
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .Portfolio .Container .Parent .Card {
+    width: calc(95% / 2);
+  }
+}
+
+@media (min-width: 1200px) {
+  .Portfolio .Container .Parent .Card {
+    width: calc(95% / 3);
+  }
+}
+
+/* Let's Start About Section */
+
+.About .Container .Parent {
+  padding-bottom: 0;
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.About .Container .Parent .Picture {
+  width: 30%;
+  display: flex;
+  justify-content: left;
+  position: relative;
+}
+.About .Container .Parent .Picture img {
+  width: 75%;
+  position: relative;
+  z-index: 2;
+}
+.About .Container .Parent .Picture::after {
+  content: "";
+  width: 100px;
+  height: 460px;
+  background-color: var(--HSectionColor);
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  z-index: 1;
+}
+.About .Container .Parent .Description {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.About .Container .Parent .Description .Is p:first-of-type,
+.About .Container .Parent .Description .Is p:nth-of-type(2) {
+  color: var(--Black);
+  font-size: 0.8rem;
+  font-family: "WorkSans-Bold";
+  line-height: 2;
+  text-align: left;
+  margin-top: 5px;
+}
+
+.About .Container .Parent .Description .Is div {
+  width: 40%;
+  height: 2px;
+  background-color: var(--Teruoise);
+  margin: 50px 0;
+}
+
+.About .Container .Parent .Description .Is p:nth-of-type(2) {
+  color: var(--Gray);
+  margin-top: -20px;
+  font-family: "WorkSans-Regular";
+}
+
+@media (max-width: 767px) {
+  .About .Container .Parent {
+    margin: 0;
+  }
+  .About .Container .Parent .Picture {
+    width: 100%;
+    justify-content: center;
+  }
+  .About .Container .Parent .Picture img {
+    width: 50%;
+  }
+  .About .Container .Parent .Picture::after {
+    display: none;
+  }
+  .About .Container .Parent .Description {
+    width: 100%;
+  }
+  .About .Container .Parent .Description .Is p:first-of-type,
+  .About .Container .Parent .Description .Is p:nth-of-type(2) {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .About .Container .Parent .Description .Is div {
+    width: 40%;
+    margin: 50px auto;
+  }
+}
+@media (min-width: 768px) {
+  .About .Container .Parent .Picture {
+    width: 30%;
+    justify-content: center;
+  }
+  .About .Container .Parent .Description {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  .About .Container .Parent .Picture {
+    width: 30%;
+  }
+  .About .Container .Parent .Description {
+    width: 60%;
+  }
+}
+
+/* Let's Start Contact Section */
+
+.Contact .Container .Parent {
+  margin-top: 60px;
+}
+
+.Contact .Container .Parent p {
+  padding: 20px;
+}
+
+.Contact .Container .Parent p:first-of-type,
+.Contact .Container .Parent p:nth-of-type(2) a {
+  color: var(--Navy_Blue);
+  font-size: 1.75rem;
+  font-family: "WorkSans-Bold";
+}
+
+.Contact .Container .Parent p:nth-of-type(2) a {
+  color: var(--Teruoise);
+  text-decoration: none;
+}
+
+.Contact .Container .Parent p:nth-of-type(3) {
+  color: var(--Black);
+  font-size: 0.8rem;
+  font-family: "WorkSans-Regular";
+}
+
+.Contact .Container .Parent p:nth-of-type(3) span {
+  padding: 0 10px;
+}
+.Contact .Container .Parent p:nth-of-type(3) i {
+  padding: 0 3px;
+  color: var(--Navy_Blue);
+}
+
+@media (max-width: 767px) {
+  .Contact .Container .Parent p:first-of-type,
+  .Contact .Container .Parent p:nth-of-type(2) a {
+    font-size: 1.2rem;
+  }
+  .Contact .Container .Parent p:nth-of-type(3) {
+    color: var(--Black);
+    font-size: 0.7rem;
+    font-family: "WorkSans-Regular";
+  }
+}
+
+/* Let's End What we Start */
+.End {
+  width: 100%;
+  background-color: var(--Navy_Blue);
+  text-align: center;
+}
+.End p {
+  color: var(--White);
+  font-size: 0.9rem;
+  font-family: "WorkSans-Regular";
+  padding: 25px;
+}
+.End p span {
+  color: var(--Teruoise);
+  font-family: "WorkSans-Bold";
+}
+
+/* Thank You ❤ */
